@@ -35,16 +35,16 @@ if (['mainnet', 'sepolia', 'polygon', 'amoy'].includes(argv.network) && INFURA_K
   throw new Error(`Could not find Infura key in env, unable to connect to network ${argv.network}`)
 }
 
-const solidityVersion = SOLIDITY_VERSION || '0.8.23'
+const solidityVersion = SOLIDITY_VERSION || '0.8.28'
 const soliditySettings = SOLIDITY_SETTINGS
   ? JSON.parse(SOLIDITY_SETTINGS)
   : {
-      evmVersion: 'paris',
-      optimizer: {
-        enabled: true,
-        runs: 10_000_000,
-      },
-    }
+    evmVersion: 'paris',
+    optimizer: {
+      enabled: true,
+      runs: 10_000_000,
+    },
+  }
 
 const deterministicDeployment = (network: string): DeterministicDeploymentInfo => {
   const info = getSingletonFactoryInfo(parseInt(network))
@@ -68,11 +68,11 @@ const deterministicDeployment = (network: string): DeterministicDeploymentInfo =
 
 const customNetwork = NODE_URL
   ? {
-      custom: {
-        ...sharedNetworkConfig,
-        url: NODE_URL,
-      },
-    }
+    custom: {
+      ...sharedNetworkConfig,
+      url: NODE_URL,
+    },
+  }
   : {}
 
 const userConfig: HardhatUserConfig = {

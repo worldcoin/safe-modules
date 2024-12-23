@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: LGPL-3.0-only
-pragma solidity 0.8.23;
+pragma solidity 0.8.28;
 
 import {HandlerContext} from "@safe-global/safe-contracts/contracts/handler/HandlerContext.sol";
 import {CompatibilityFallbackHandler} from "@safe-global/safe-contracts/contracts/handler/CompatibilityFallbackHandler.sol";
