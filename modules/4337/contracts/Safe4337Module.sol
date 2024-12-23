@@ -281,7 +281,7 @@ contract Safe4337Module is IAccount, HandlerContext, CompatibilityFallbackHandle
      * @param userOp User operation struct.
      * @return validationData An integer indicating the result of the validation.
      */
-    function _validateSignatures(PackedUserOperation calldata userOp) internal view returns (uint256 validationData) {
+    function _validateSignatures(PackedUserOperation calldata userOp) virtual internal view returns (uint256 validationData) {
         (bytes memory operationData, uint48 validAfter, uint48 validUntil, bytes calldata signatures) = _getSafeOp(userOp);
 
         // The `checkSignatures` function in the Safe contract does not force a fixed size on signature length.
